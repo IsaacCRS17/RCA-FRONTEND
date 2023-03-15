@@ -1,0 +1,109 @@
+.tabla__legend{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+
+}
+table{
+    width: 100%;
+    font-size: var(--font-size-table);
+    & th, tr, td{
+        padding: 0.6rem 1rem;
+        text-align: center;
+    }
+    & tr{
+        cursor: pointer;
+    }
+}
+.empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input{
+    outline: none;
+    width: 100%;
+    padding-left: 1rem;
+    background:none;
+}
+.select{
+    border: 1px solid rgb(177, 174, 174);
+    border-radius: 0.3rem;
+    color: rgb(105, 105, 105);
+}
+.field__input--button{
+    background-color: var(--const-color-blue);
+    padding: 0 1.4rem;
+    width: max-content;
+    &:disabled{
+        background-color: rgb(126, 162, 229);
+    }
+    &:enabled{
+        &:hover{
+            background-color: var(--const-color-blue-hover);
+        }
+    }
+}
+.btn__cancel{
+    width: 10rem;
+}
+//form matricula
+.legend__student{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+.form{
+    width: 80vw;
+    min-width: 100px;
+}
+.form__field{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.2rem 0.4rem;
+}
+.btns{
+    height: 4rem;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+//modal alumnos
+.list__alumnos{
+    width: 30vw;
+    padding: 2rem 0 0 0;
+}
+.table__search, .table__search input{
+    font-size: 0.82rem;
+}
+.alumnos{
+    height: 2rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(199, 190, 190);
+    }
+    &:focus{
+        color: red;
+    }
+}
+.btn_ok{
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.size{
+    border: 1px solid rgb(194, 184, 184);
+    border-radius: 1px;
+    cursor: pointer;
+    width: 10rem;
+}
+.sizeOptions{
+    width: 10rem;
+    transition: all 0.5s ease;
+}

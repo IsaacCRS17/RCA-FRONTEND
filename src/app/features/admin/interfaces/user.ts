@@ -1,3 +1,5 @@
+import { ITeacher } from "./teacher";
+
 export interface IUser{
     code: string;
     name: string;
@@ -8,4 +10,5 @@ export interface IUser{
     tel: string;
     gra_inst: string;
     email: string;
+    docenteDTO:ITeacher;
 }

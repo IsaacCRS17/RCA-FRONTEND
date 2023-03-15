@@ -17,7 +17,8 @@ export class PaginationService {
     {title:'grade',page:0,size:5},
     {title:'period',page:0,size:5},
     {title:'noticias',page:0,size:5},
-    {title:'role',page:0,size:5}
+    {title:'image',page:0,size:5},
+    {title:'anio',page:0,size:5}
   ]
   
   getPage(paginationData:string){

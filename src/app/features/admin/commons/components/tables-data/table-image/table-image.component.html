@@ -1,0 +1,67 @@
+<div class="table__search bg-gray-200 p-3 flex justify-end items-center">
+    <label class="mx-4"><b>{{tableName}}</b></label>
+    <div class="rounded-3xl bg-slate-50 w-1/3 flex px-4 py-2">
+        <i class="bi bi-search"></i>
+        <input class="bg-slate-50 w-full outline-none px-6" [(ngModel)]="nomSearch" (ngModelChange)="search($event)"
+            type="search" placeholder="Buscar">
+    </div>
+    <app-btn-add (click)="modalAdd.showModal()" [title]="title"></app-btn-add>
+</div>
+
+<app-modal [title]="'Agregar Imagen'" #modalAdd>
+    <form [formGroup]="group" (ngSubmit)="save()" class="form">
+        <div class="form__field">
+            <div class="field">
+                <app-label-field [title]="'**Nombre'"></app-label-field>
+                <app-field><input formControlName="nom" class="input" type="text" placeholder="Nombre"></app-field>
+                <app-required-field class="px-2" *ngIf="nom?.invalid && (nom?.dirty || nom?.touched)"
+                    [text]="'**El campo debe contener mínimo 3 caracteres'"></app-required-field>
+            </div>
+            <div class="field">
+                <app-label-field [title]="'*Grado'"></app-label-field>
+                <select  formControlName="tipDoc" class="select cursor-pointer h-10 w-full outline-none px-2">
+                    <option value="{{option.code}}" *ngFor="let option of images">{{option.name}}</option>
+                </select>
+            </div>
+            <div class="w-full">
+                <app-label-field [title]="'**Descripción'"></app-label-field>
+                <textarea  formControlName="descripcion" name="textarea" rows="5" class="textArea w-full"></textarea>
+                <!-- <app-required-field class="px-2" *ngIf="descripcion?.invalid && (descripcion?.dirty || descripcion?.touched)" [text]="'*El campo es requerido'"></app-required-field>     -->
+            </div>
+        </div>
+        <div class="btns flex py-7 w-full">
+            <button type="submit" [disabled]="group.invalid"
+                class="field__input--button w-1/2 mx-2 h-9 rounded-3xl text-white">Guargar</button>
+            <app-btn-cancel (click)="modalAdd.hiddenModal()" class="w-1/2 mx-2"></app-btn-cancel>
+        </div>
+    </form>
+</app-modal>
+
+<table class="table bg-gray-50">
+    <thead>
+        <th *ngFor="let item of head">{{item}}</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of images, let i=index">
+            <td>{{item.code}}</td>
+            <td>{{item.name}}</td>
+            <td class="table__description">{{item.route}}</td>
+            <td class="flex justify-center">
+                <app-btn-update (click)="form(item)" (click)="modalAdd.showModal()"></app-btn-update>
+                <app-btn-delete (click)="modalDelete.showModal()"></app-btn-delete>
+            </td>
+            <!-- MODAL ELIMINAR -->
+            <app-modal [title]="'Eliminar apoderado?'" #modalDelete>
+                <div class="flex flex-col items-start px-4">
+                    <label><b>Codigo: </b>{{item.code}}</label>
+                    <label><b>NombrE: </b>{{item.name}}</label>
+                </div>
+                <div class="flex py-7 w-full">
+                    <app-btn-cancel (click)="modalDelete.hiddenModal()" class="w-1/2 mx-2"></app-btn-cancel>
+                    <app-btn-confirm-delete (click)="delete(item.code)" class="w-1/2 mx-2"></app-btn-confirm-delete>
+                </div>
+            </app-modal>
+        </tr>
+    </tbody>
+</table>
+

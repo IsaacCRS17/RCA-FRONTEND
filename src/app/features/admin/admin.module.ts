@@ -16,7 +16,8 @@ import { AdminEnrollmentView } from './views/admin-enrollment/admin-enrollment.v
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminSchoolYearView } from './views/admin-school-year/admin-school-year.view';
 import { AdminNewsView } from './views/admin-news/admin-news.view';
-import { AdminRoleComponent } from './views/admin-role/admin-role.component';
+import { AdminImageComponent } from './views/admin-image/admin-image.component';
+import { AdminAniolectivoComponent } from './views/admin-aniolectivo/admin-aniolectivo.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AdminRoleComponent } from './views/admin-role/admin-role.component';
     AdminEnrollmentView,
     AdminSchoolYearView,
     AdminNewsView,
-    AdminRoleComponent,
+    AdminImageComponent,
+    AdminAniolectivoComponent,
   
   ],
   imports: [
