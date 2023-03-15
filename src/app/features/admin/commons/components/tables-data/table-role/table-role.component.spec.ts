@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminAniolectivoComponent } from './admin-aniolectivo.component';
+import { TableRoleComponent } from './table-role.component';
 
-describe('AdminAniolectivoComponent', () => {
-  let component: AdminAniolectivoComponent;
-  let fixture: ComponentFixture<AdminAniolectivoComponent>;
+describe('TableRoleComponent', () => {
+  let component: TableRoleComponent;
+  let fixture: ComponentFixture<TableRoleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminAniolectivoComponent ]
+      declarations: [ TableRoleComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminAniolectivoComponent);
+    fixture = TestBed.createComponent(TableRoleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

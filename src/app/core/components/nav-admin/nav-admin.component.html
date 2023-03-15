@@ -15,8 +15,8 @@
             <!--<ul class="sub__menu hidden bg-red-500 ml-7 py-1">
                 <li class="py-1">Submenu</li>
             </ul>  -->
-    </li>
-    <li class="nav__option flex flex-col" #operaciones>
+       </li>
+       <li class="nav__option flex flex-col" #operaciones>
         <div class="flex"  (click)="submenuOper()">
             <i class="bi bi-people"></i>
             <span class="nav__option__toggle">
@@ -84,15 +84,14 @@
                         </span>
                     </div>
                 </li>
-                <li (click)="redirectTo('anioLectivo')" class="nav__option__sub flex flex-col">
+                <li (click)="redirectTo('rol')" class="nav__option__sub flex flex-col">
                     <div class="flex">
                         <i class="bi bi-journal-album"></i>
                         <span class="nav__option__toggle">
-                            <label class="option__label">Año lectivo</label>
+                            <label class="option__label">Roles</label>
                         </span>
                     </div>
                 </li>
-                
             </ul>
         </li>
         <li class="nav__option flex flex-col" #confALectivo>
@@ -127,14 +126,6 @@
                 <i class="bi bi-newspaper"></i>
                 <span class="nav__option__toggle">
                     <label class="option__label">Noticias</label>
-                </span>
-            </div>
-        </li>
-        <li (click)="redirectTo('imagenes')" class="nav__option flex flex-col">
-            <div class="flex">
-                <i class="bi bi-image"></i>
-                <span class="nav__option__toggle">
-                    <label class="option__label">Imagenes</label>
                 </span>
             </div>
         </li>

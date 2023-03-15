@@ -1,0 +1,16 @@
+<div class="px-8">
+    <app-route></app-route>
+    <app-table [title]="'Agregar rol'" [tableName]="tableName">
+        <app-table-role 
+            (roleDelete)="delete($event)" 
+            (roleSave)="save($event)" 
+            (roleSearch)="search($event)"
+            [roles]="roles" [tableName]="tableName">
+        </app-table-role> 
+        <app-pagination [paginationData]="paginationData"></app-pagination>    
+    </app-table>
+
+</div>
+<!-- MENSAJE DE OPERACION -->
+<app-modal-response [title]="msjResponse" [successful]="successful" #modalOk></app-modal-response>
+

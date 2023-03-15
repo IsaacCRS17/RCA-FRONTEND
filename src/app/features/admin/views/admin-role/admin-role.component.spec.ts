@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminImageComponent } from './admin-image.component';
+import { AdminRoleComponent } from './admin-role.component';
 
-describe('AdminImageComponent', () => {
-  let component: AdminImageComponent;
-  let fixture: ComponentFixture<AdminImageComponent>;
+describe('AdminRoleComponent', () => {
+  let component: AdminRoleComponent;
+  let fixture: ComponentFixture<AdminRoleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminImageComponent ]
+      declarations: [ AdminRoleComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdminImageComponent);
+    fixture = TestBed.createComponent(AdminRoleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

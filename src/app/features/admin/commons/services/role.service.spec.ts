@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AnioLectivoService } from './anio-lectivo.service';
+import { RoleService } from './role.service';
 
-describe('AnioLectivoService', () => {
-  let service: AnioLectivoService;
+describe('RoleService', () => {
+  let service: RoleService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AnioLectivoService);
+    service = TestBed.inject(RoleService);
   });
 
   it('should be created', () => {

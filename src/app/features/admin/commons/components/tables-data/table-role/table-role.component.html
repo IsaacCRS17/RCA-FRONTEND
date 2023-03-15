@@ -7,18 +7,21 @@
     </div>
     <app-btn-add (click)="modalAdd.showModal()" [title]="title"></app-btn-add>
 </div>
-
 <!-- MODAL AGREGAR -->
-<app-modal [title]="'Agregar Año'" #modalAdd>
+<app-modal [title]="'Agregar Rol'" #modalAdd>
     <form [formGroup]="group" (ngSubmit)="save()" class="form">
         <div class="form__field">
             <div class="field">
                 <app-label-field [title]="'**Nombre'"></app-label-field>
                 <app-field><input formControlName="nom" class="input" type="text" placeholder="Nombre"></app-field>
-                <app-required-field class="px-2" *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+                <app-required-field class="px-2" *ngIf="nom?.invalid && (nom?.dirty || nom?.touched)"
                     [text]="'**El campo debe contener mínimo 3 caracteres'"></app-required-field>
             </div>
-           
+             <div class="w-full">
+                <app-label-field [title]="'**Descripción'"></app-label-field>
+                <textarea  formControlName="descripcion" name="textarea" rows="5" class="textArea w-full"></textarea>
+                <!-- <app-required-field class="px-2" *ngIf="descripcion?.invalid && (descripcion?.dirty || descripcion?.touched)" [text]="'*El campo es requerido'"></app-required-field>     -->
+            </div>
         </div>
         <div class="btns flex py-7 w-full">
             <button type="submit" [disabled]="group.invalid"
@@ -33,7 +36,7 @@
         <th *ngFor="let item of head">{{item}}</th>
     </thead>
     <tbody>
-        <tr *ngFor="let item of anios, let i=index">
+        <tr *ngFor="let item of roles, let i=index">
             <td>{{item.code}}</td>
             <td>{{item.name}}</td>
             <!-- <td class="table__description">{{item.descripcion}}</td> -->
@@ -55,3 +58,4 @@
         </tr>
     </tbody>
 </table>
+
