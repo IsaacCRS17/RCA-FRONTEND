@@ -67,3 +67,4 @@ export class TableRoleComponent implements OnInit {
   refresh(): void { window.location.reload(); }
 
 }
+
