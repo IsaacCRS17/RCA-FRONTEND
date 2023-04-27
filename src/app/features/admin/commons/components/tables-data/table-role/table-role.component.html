@@ -8,24 +8,20 @@
     <app-btn-add (click)="modalAdd.showModal()" [title]="title"></app-btn-add>
 </div>
 <!-- MODAL AGREGAR -->
-<app-modal [title]="'Agregar Rol'" #modalAdd>
+<app-modal #modalAdd [title]="'Agregar Rol'">
     <form [formGroup]="group" (ngSubmit)="save()" class="form">
         <div class="form__field">
             <div class="field">
-                <app-label-field [title]="'**Nombre'"></app-label-field>
-                <app-field><input formControlName="nom" class="input" type="text" placeholder="Nombre"></app-field>
+              <app-label-field [title]="'**Nombre'"></app-label-field>
+              <app-field><input formControlName="code" class="input" type="text" readonly></app-field>
+              <app-field><input formControlName="nom" class="input" type="text" placeholder="Nombre"></app-field>
                 <app-required-field class="px-2" *ngIf="nom?.invalid && (nom?.dirty || nom?.touched)"
                     [text]="'**El campo debe contener mínimo 3 caracteres'"></app-required-field>
-            </div>
-             <div class="w-full">
-                <app-label-field [title]="'**Descripción'"></app-label-field>
-                <textarea  formControlName="descripcion" name="textarea" rows="5" class="textArea w-full"></textarea>
-                <!-- <app-required-field class="px-2" *ngIf="descripcion?.invalid && (descripcion?.dirty || descripcion?.touched)" [text]="'*El campo es requerido'"></app-required-field>     -->
             </div>
         </div>
         <div class="btns flex py-7 w-full">
             <button type="submit" [disabled]="group.invalid"
-                class="field__input--button w-1/2 mx-2 h-9 rounded-3xl text-white">Guargar</button>
+                class="field__input--button w-1/2 mx-2 h-9 rounded-3xl text-white">Guardar</button>
             <app-btn-cancel (click)="modalAdd.hiddenModal()" class="w-1/2 mx-2"></app-btn-cancel>
         </div>
     </form>
@@ -52,7 +48,7 @@
                 </div>
                 <div class="flex py-7 w-full">
                     <app-btn-cancel (click)="modalDelete.hiddenModal()" class="w-1/2 mx-2"></app-btn-cancel>
-                    <app-btn-confirm-delete (click)="delete(item.code)" class="w-1/2 mx-2"></app-btn-confirm-delete>
+                    <app-btn-confirm-delete (click)="delete(item.id)" class="w-1/2 mx-2"></app-btn-confirm-delete>
                 </div>
             </app-modal>
         </tr>

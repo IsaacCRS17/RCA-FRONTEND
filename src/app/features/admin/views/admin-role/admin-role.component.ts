@@ -10,7 +10,7 @@ import { IRole } from '../../interfaces/role';
   styleUrls: ['./admin-role.component.scss']
 })
 export class AdminRoleComponent implements OnInit {
-  
+
   roles: IRole[]=[];
   tableName: string = 'Roles';
   paginationData = 'role'
@@ -38,14 +38,14 @@ export class AdminRoleComponent implements OnInit {
         this.roles = response.data.list;
       })
     }
-  
+
     // AGREGAR - ACTUALIZAR
     save(role:IRole){
-  
+
       if(role.code==null){
         this.roleService.add(role).subscribe(data =>{
           console.log(data.msj)
-          if(data.msj==='OK'){
+          if(data.msj==='ok'){
             this.msjResponse = 'Agregado correctamente';
             this.successful=true;
           }else{
@@ -55,7 +55,7 @@ export class AdminRoleComponent implements OnInit {
         });
       }else{
         this.roleService.update(role).subscribe(data =>{
-          if(data.msj === 'OK'){
+          if(data.msj === 'ok'){
             this.msjResponse = 'Cambios actualizados con éxito';
             this.successful=true;
           }else{
@@ -66,18 +66,18 @@ export class AdminRoleComponent implements OnInit {
       }
       this.modalOk.showModal();
     }
-  
-    //ELIMINAR 
+
+    //ELIMINAR
     delete(id:string){
       this.roleService.delete(id).subscribe(data =>{
-        if(data.msj==='OK'){
+        if(data.successful===true){
           this.msjResponse = 'Eliminado correctamente';
           this.successful=true;
         }
       });
       this.modalOk.showModal();
     }
-  
+
    refresh(): void { window.location.reload(); }
 
 }

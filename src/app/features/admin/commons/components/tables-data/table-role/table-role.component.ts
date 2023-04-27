@@ -33,19 +33,21 @@ export class TableRoleComponent implements OnInit {
     this.form();
 
   }
+  get id(){return this.group.get('id')}
   get code(){return this.group.get('code')}
   get nom(){return this.group.get('nom')}
   // get descripcion(){return this.group.get('descripcion')}
 
   form(item?:IRole):void{
     this.group = this.formBuilder.group({
+      id:[item?item.id:'',[Validators.required,Validators.minLength(40)]],
       code:[item?item.code:'',[Validators.required,Validators.minLength(3),Validators.maxLength(30)]],
       nom:[item?item.name:'',[Validators.required,Validators.minLength(3),Validators.maxLength(30)]],
       // descripcion:[item?item.descripcion:'',]
     });
   }
 
-  
+
   //BUSCAR
   search(nom:string){
     this.roleSearch.emit(nom);
@@ -59,10 +61,12 @@ export class TableRoleComponent implements OnInit {
     this.modalAdd.hiddenModal();
   }
 
-  // ELIMINAR 
+  // ELIMINAR
   delete(id:string){
     this.roleDelete.emit(id)
     this.modalDelete.hiddenModal();
   }
+
+
 }
 

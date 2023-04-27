@@ -29,8 +29,8 @@ export class RoleService {
   }
 
   //Eliminar Rol
-  delete(id:string):Observable<IResponse>{
-    return this.http.delete<IResponse>(`${environment.api}/rol`+id);
+  delete(id:string):Observable<IApiResponse>{
+    return this.http.delete<IApiResponse>(`${environment.api}/rol/`+id);
   }
 }
 
